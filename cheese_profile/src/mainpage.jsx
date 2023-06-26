@@ -59,36 +59,23 @@ function MainPage() {
         Colหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหห
       </Col>
     </Row> */}
-    <Row gutter={16} className="mobile-scroll">
-    <Col span={8}>
-      <Card title="Card title" bordered={false}>
-      <Carousel autoplay      style={{ width: '100px' }}>
-    <div>
-      <h3 style={contentStyle}>1</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>2</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>3</h3>
-    </div>
-    <div>
-      <h3 style={contentStyle}>4</h3>
-    </div>
-  </Carousel>
-      </Card>
-    </Col>
-    <Col span={8}>
-      <Card title="Card title" bordered={false}>
-        Card content
-      </Card>
-    </Col>
-    <Col span={8}>
-      <Card title="Card title" bordered={false}>
-        Card content
-      </Card>
-    </Col>
-  </Row>
+<Row gutter={[16, 16]} className="" >
+  <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+    <Card title="Card title" bordered={false}>
+      Card content
+    </Card>
+  </Col>
+  <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+    <Card title="Card title" bordered={false}>
+      Card content
+    </Card>
+  </Col>
+  <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+    <Card title="Card title" bordered={false}>
+      Card content
+    </Card>
+  </Col>
+</Row>
        
         
       </div>
