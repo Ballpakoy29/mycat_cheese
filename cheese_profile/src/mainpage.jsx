@@ -1,23 +1,32 @@
 import { useState } from 'react'
 import CatPeople from './img/cat_people.png'
-import { Image } from 'antd';
+import { Image, Typography } from 'antd';
+
+const { Title } = Typography;
 
 function MainPage() {
 
   return (
     <>
+
+      <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
       <div>
-      <img src={CatPeople} className="logo react" style={{ width: '100vw', height: 'auto', objectFit: 'cover', verticalAlign: 'top' }} />
-      {/* <Image
-          style={{
-            width: '100vw',
-            height: '100vh',
-            objectFit: 'cover',
-          }}
+
+        <Image
           src={CatPeople}
-          preview={{ visible: false }}
-        /> */}
+          preview={false}
+          style={{ width: '100%', objectFit: 'cover' }}
+        />
+        <Title level={2} style={{ textAlign: 'center', marginTop: '16px' }}>
+          Welcome to My Website
+        </Title>
+        <p style={{ textAlign: 'center' }}>
+          Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed at tellus euismod, sodales
+          dui sit amet, rhoncus arcu.
+        </p>
       </div>
+    </div>
+
     </>
   )
 }
