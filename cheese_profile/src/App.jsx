@@ -10,7 +10,7 @@ function App() {
   return (
     <>
       <div>
-      <img src={CatPeople} className="logo react" style={{ width: '30vw' , height : '100%'}} />
+      <img src={CatPeople} className="logo react" style={{ width: '100vw' , height : '100%'}} />
 
       </div>
       <h1>แมวชีส</h1>
