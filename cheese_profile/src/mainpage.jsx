@@ -59,24 +59,23 @@ function MainPage() {
         Colหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหห
       </Col>
     </Row> */}
-<Row gutter={[16, 16]} className="" >
-  <Col xs={{ span: 24 }} lg={{ span: 8 }}>
-    <Card title="Card title" bordered={false}>
-      Card content
-    </Card>
-  </Col>
-  <Col xs={{ span: 24 }} lg={{ span: 8 }}>
-    <Card title="Card title" bordered={false}>
-      Card content
-    </Card>
-  </Col>
-  <Col xs={{ span: 24 }} lg={{ span: 8 }}>
-    <Card title="Card title" bordered={false}>
-      Card content
-    </Card>
-  </Col>
+<Row gutter={[16, 16]} className="" style={{ marginBottom: '16px' }}>
+    <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+        <Card title="Card title" bordered={false}>
+            Card content
+        </Card>
+    </Col>
+    <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+        <Card title="Card title" bordered={false}>
+            Card content
+        </Card>
+    </Col>
+    <Col xs={{ span: 24 }} lg={{ span: 8 }}>
+        <Card title="Card title" bordered={false}>
+            Card content
+        </Card>
+    </Col>
 </Row>
-       
         
       </div>
     </div>
