@@ -7,7 +7,7 @@ function MainPage() {
   return (
     <>
       <div>
-      <img src={CatPeople} className="logo react" style={{ width: '50vw' , height : '100%'}} />
+      <img src={CatPeople} className="logo react" style={{ width: '100vw', height: 'auto', objectFit: 'cover', verticalAlign: 'top' }} />
       {/* <Image
           style={{
             width: '100vw',
