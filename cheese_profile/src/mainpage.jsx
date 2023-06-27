@@ -13,6 +13,18 @@ const contentStyle = {
     background: '#364d79',
   };
 
+  function ProfileCard({ name, title, description, avatar }) {
+    return (
+      <Card>
+        <Meta
+          avatar={<Avatar src={avatar} />}
+          title={name}
+          description={title}
+        />
+        <Paragraph>{description}</Paragraph>
+      </Card>
+    );
+  }
 
 function MainPage() {
 
@@ -21,7 +33,18 @@ function MainPage() {
 
       <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'center', height: '100vh' }}>
       <div>
-
+      <Title
+            level={2}
+            style={{
+                textAlign: 'center',
+                marginTop: '16px',
+                fontFamily: 'Anuphan, sans-serif',
+                fontWeight: 'bold',
+                color: 'white',
+            }}
+            >
+            พี่ชีส อดีตแมวจร
+        </Title>
         <Image
           src={CatPeople}
           preview={false}
@@ -37,28 +60,8 @@ function MainPage() {
                 color: 'white',
             }}
             >
-            พี่ชีส อดีตแมวจร
+
         </Title>
-        {/* <Row className="mobile-scroll">
-      <Col
-        xs={{ span: 24 }}
-        lg={{ span: 6, offset: 2 }}
-      >
-        Colะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะะหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหห
-      </Col>
-      <Col
-        xs={{ span: 24 }}
-        lg={{ span: 6, offset: 2 }}
-      >
-        Colหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหห
-      </Col>
-      <Col
-        xs={{ span: 24 }}
-        lg={{ span: 6, offset: 2 }}
-      >
-        Colหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหหห
-      </Col>
-    </Row> */}
 <Row gutter={[16, 16]} className="" style={{ marginBottom: '16px' }}>
     <Col xs={{ span: 24 }} lg={{ span: 8 }}>
         <Card title="Card title" bordered={false}>
