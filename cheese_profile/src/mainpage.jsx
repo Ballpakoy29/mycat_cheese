@@ -33,7 +33,7 @@ import Slide from '@mui/material/Slide';
 
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
-import P1 from './img/set1/1.jpg'
+
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -57,7 +57,7 @@ const itemData = [
     cols: 2,
   },
   {
-    img: {P1},
+    img: 'https://cdn.pic.in.th/file/picinth/1c2799a68089f023e.jpeg',
     title: 'Burger',
   },
   {
