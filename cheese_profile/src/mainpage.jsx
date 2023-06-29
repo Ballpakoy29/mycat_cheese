@@ -34,6 +34,31 @@ import Slide from '@mui/material/Slide';
 import ImageList from '@mui/material/ImageList';
 import ImageListItem from '@mui/material/ImageListItem';
 
+// Manually import images
+import img100001 from './img/set1/100001.jpg';
+import img100002 from './img/set1/100002.jpg';
+import img100003 from './img/set1/100003.jpg';
+import img100004 from './img/set1/100004.jpg';
+import img100005 from './img/set1/100005.jpg';
+import img100006 from './img/set1/100006.jpg';
+import img100007 from './img/set1/100007.jpg';
+import img100008 from './img/set1/100008.jpg';
+import img100009 from './img/set1/100009.jpg';
+import img100010 from './img/set1/100010.jpg';
+import img100011 from './img/set1/100011.jpg';
+import img100012 from './img/set1/100012.jpg';
+import img100013 from './img/set1/100013.jpg';
+import img100014 from './img/set1/100014.jpg';
+import img100015 from './img/set1/100015.jpg';
+import img100016 from './img/set1/100016.jpg';
+import img100017 from './img/set1/100017.jpg';
+import img100018 from './img/set1/100018.jpg';
+import img100019 from './img/set1/100019.jpg';
+import img100020 from './img/set1/100020.jpg';
+import img100021 from './img/set1/100021.jpg';
+import img100022 from './img/set1/100022.jpg';
+import img100023 from './img/set1/100023.jpg';
+import img100024 from './img/set1/100024.jpg';
 
 
 const Transition = React.forwardRef(function Transition(props, ref) {
@@ -49,68 +74,33 @@ function srcset(image, size, rows = 1, cols = 1) {
   };
 }
 
-const itemData = [
-  {
-    img: 'https://cdn.pic.in.th/file/picinth/1c2799a68089f023e.jpeg',
-    title: 'Breakfast',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://cdn.pic.in.th/file/picinth/1c2799a68089f023e.jpeg',
-    title: 'Burger',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1522770179533-24471fcdba45',
-    title: 'Camera',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1444418776041-9c7e33cc5a9c',
-    title: 'Coffee',
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1533827432537-70133748f5c8',
-    title: 'Hats',
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1558642452-9d2a7deb7f62',
-    title: 'Honey',
-    author: '@arwinneil',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1516802273409-68526ee1bdd6',
-    title: 'Basketball',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1518756131217-31eb79b20e8f',
-    title: 'Fern',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1597645587822-e99fa5d45d25',
-    title: 'Mushrooms',
-    rows: 2,
-    cols: 2,
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1567306301408-9b74779a11af',
-    title: 'Tomato basil',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1471357674240-e1a485acb3e1',
-    title: 'Sea star',
-  },
-  {
-    img: 'https://images.unsplash.com/photo-1589118949245-7d38baf380d6',
-    title: 'Bike',
-    cols: 2,
-  },
-];
 
+const images = [img100001,
+  img100002,
+  img100003,
+  img100004,
+  img100005,
+  img100006,
+  img100007,
+  img100008,
+  img100009,
+  img100010,
+  img100011,
+  img100012,
+  img100013,
+  img100014,
+  img100015,
+  img100016,
+  img100017,
+  img100018,
+  img100019,
+  img100020,
+  img100021,
+  img100022,
+  img100023,
+  img100024,];
 function MainPage() {
+  
   const [value, setValue] = useState(0);
   const ref = useRef(null); // Define the ref here
   const [open, setOpen] = React.useState(false);
@@ -218,7 +208,14 @@ function MainPage() {
       >
         <DialogTitle>{"ทำความรู้จักพี่ชีส"}</DialogTitle>
         <DialogContent>
-        <ImageList
+        <ImageList cols={3}>
+            {images.map((image, index) => (
+                <ImageListItem key={index}>
+                    <img src={image} alt={'image' + index} loading="lazy" />
+                </ImageListItem>
+            ))}
+        </ImageList>
+        {/* <ImageList
       sx={{ width: 500, height: 450 }}
       variant="quilted"
       cols={4}
@@ -233,7 +230,7 @@ function MainPage() {
           />
         </ImageListItem>
       ))}
-    </ImageList>
+        </ImageList> */}
         </DialogContent>
         <DialogActions>
           <Button onClick={handleClose2}>OK</Button>
