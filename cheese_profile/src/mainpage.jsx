@@ -10,37 +10,63 @@ import BottomNavigationAction from '@mui/material/BottomNavigationAction';
 import RestoreIcon from '@mui/icons-material/Restore';
 import FavoriteIcon from '@mui/icons-material/Favorite';
 import ArchiveIcon from '@mui/icons-material/Archive';
+import PetsIcon from '@mui/icons-material/Pets';
 import Paper from '@mui/material/Paper';
 import List from '@mui/material/List';
 import ListItem from '@mui/material/ListItem';
 import ListItemAvatar from '@mui/material/ListItemAvatar';
 import ListItemText from '@mui/material/ListItemText';
 import Avatar from '@mui/material/Avatar';
+import InsertPhotoIcon from '@mui/icons-material/InsertPhoto';
 
-function refreshMessages() {
-  const getRandomInt = (max) => Math.floor(Math.random() * Math.floor(max));
+import Backdrop from '@mui/material/Backdrop';
+import CircularProgress from '@mui/material/CircularProgress';
+import Button from '@mui/material/Button';
 
-  return Array.from(new Array(50)).map(
-    () => messageExamples[getRandomInt(messageExamples.length)],
-  );
-}
+
+import Dialog from '@mui/material/Dialog';
+import DialogActions from '@mui/material/DialogActions';
+import DialogContent from '@mui/material/DialogContent';
+import DialogContentText from '@mui/material/DialogContentText';
+import DialogTitle from '@mui/material/DialogTitle';
+import Slide from '@mui/material/Slide';
+
+
+const Transition = React.forwardRef(function Transition(props, ref) {
+  return <Slide direction="up" ref={ref} {...props} />;
+});
 
 function MainPage() {
   const [value, setValue] = useState(0);
   const ref = useRef(null); // Define the ref here
+  const [open, setOpen] = React.useState(false);
+  const [open2, setOpen2] = React.useState(false);
+  const [open3, setOpen3] = React.useState(false);
 
-  const [messages, setMessages] = useState(() => refreshMessages());
+  const handleClose = () => {
+    setOpen(false);
+  };
+  const handleOpen = () => {
+    setOpen(true);
+  };
 
-  useEffect(() => {
-    if (ref.current) {
-      ref.current.ownerDocument.body.scrollTop = 0;
-    }
-    setMessages(refreshMessages());
-  }, [value, setMessages]);
+  const handleClose2 = () => {
+    setOpen2(false);
+  };
+  const handleOpen2 = () => {
+    setOpen2(true);
+  };
+
+  const handleClose3 = () => {
+    setOpen3(false);
+  };
+  const handleOpen3 = () => {
+    setOpen3(true);
+  };
 
   return (
     <>
-      {/* <Box sx={{ pb: 1 }} ref={ref}> */}
+      <Box sx={{ pb: 1 }} ref={ref}>
         {/* <CssBaseline /> */}
         <div>
           <Image
@@ -49,7 +75,6 @@ function MainPage() {
             style={{ width: '100%', objectFit: 'cover' }}
           />
           <Typography variant="h1" component="h2">
-            {/* Add your heading text here */}
           </Typography>
         </div>
         {/* <List>
@@ -70,12 +95,77 @@ function MainPage() {
               setValue(newValue);
             }}
           >
-            <BottomNavigationAction label="Recents" icon={<RestoreIcon />} />
-            <BottomNavigationAction label="Favorites" icon={<FavoriteIcon />} />
-            <BottomNavigationAction label="Archive" icon={<ArchiveIcon />} />
+            <BottomNavigationAction label="ทำความรู้จักพี่ขีส" onClick={handleOpen} icon={<PetsIcon />} />
+            <BottomNavigationAction label="วีรกรรม" onClick={handleOpen2} icon={<FavoriteIcon />} />
+            <BottomNavigationAction label="รูปพี่ชีส" onClick={handleOpen3} icon={<InsertPhotoIcon />} />
           </BottomNavigation>
         </Paper>
-      {/* </Box> */}
+      </Box>
+
+      <Dialog
+        open={open}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>{"ทำความรู้จักพี่ชีส"}</DialogTitle>
+        <DialogContent>
+          <DialogContentText id="alert-dialog-slide-description">
+            พี่ชีสไม่ได้หลุดหนีออกจากห้อง แต่พี่ชีสเคยเป็นแมวจรที่อยู่ที่ตึก S3 มานาน เลยเคยชินกับข้างล่าง แต่ก่อนพี่ชีสโดนกัดมาบ่อยมากๆ และบางทีก็เป็นโรคผิวหนัง เลยเอามารักษาแล้วก็เลยรับพี่ชีสมาเป็นลูกบุญธรรม
+          </DialogContentText>
+          <DialogContentText id="alert-dialog-slide-description">
+            :
+          </DialogContentText>
+          <DialogContentText id="alert-dialog-slide-description">
+           เวลาปล่อยพี่ชีสจะเป็นช่วงเวลาหลังเที่ยงคืน จนถึง 6 โมงเช้า จะปล่อยให้ไปเดินเล่น พี่ชีสมีเพื่อนแมวอยู่ที่บ้านรับฝากรถ แต่บางทีพี่ชีสก็จะเดินกลับมานอนเล่นๆ อยู่แถวป้อมยาม และก็ที่อื่นๆ ใน S3 
+          
+          </DialogContentText>
+          <DialogContentText id="alert-dialog-slide-description">
+            :
+          </DialogContentText>
+          <DialogContentText id="alert-dialog-slide-description">
+            ถ้าเจอพี่ชีส เล่นกับพี่ชีสได้พี่ชีสไม่ดุ 
+          </DialogContentText>
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose}>OK</Button>
+        </DialogActions>
+      </Dialog>
+      
+
+      <Dialog
+        open={open2}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose2}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>{"ทำความรู้จักพี่ชีส 2"}</DialogTitle>
+        <DialogContent>
+        
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose2}>OK</Button>
+        </DialogActions>
+      </Dialog>
+
+      <Dialog
+        open={open3}
+        TransitionComponent={Transition}
+        keepMounted
+        onClose={handleClose3}
+        aria-describedby="alert-dialog-slide-description"
+      >
+        <DialogTitle>{"ทำความรู้จักพี่ชีส 3 "}</DialogTitle>
+        <DialogContent>
+      
+        </DialogContent>
+        <DialogActions>
+          <Button onClick={handleClose3}>OK</Button>
+        </DialogActions>
+      </Dialog>
+
     </>
   );
 }
